@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;
 import java.util.Map;
 
-
+//All endpoints starts with /api
 @RestController
 @RequestMapping("/api")
 public class AwsDatabaseController {
@@ -19,6 +19,7 @@ public class AwsDatabaseController {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+//The queries that retrieve the highest senders
     @GetMapping("/top_customers")
     public List<Map<String, Object>> getTopCustomers() {
         String query = """
@@ -36,6 +37,7 @@ public class AwsDatabaseController {
         return jdbcTemplate.queryForList(query);
     }
 
+//This queries returns sales amount grouped by month and year
     @GetMapping("/monthly_sales")
     public List<Map<String, Object>> getMonthlySales() {
         String query = """
@@ -52,6 +54,7 @@ public class AwsDatabaseController {
         return jdbcTemplate.queryForList(query);
     }
 
+//This queries returns products that have never been ordered    
     @GetMapping("/products_never_ordered")
     public List<Map<String, Object>> getProductsNeverOrdered() {
         String query = """
@@ -67,6 +70,7 @@ public class AwsDatabaseController {
         return jdbcTemplate.queryForList(query);
     }
 
+//This queries computes average order value by country
     @GetMapping("/avg_order_value_by_country")
     public List<Map<String, Object>> getAvgOrderValueByCountry() {
         String query = """
@@ -89,6 +93,7 @@ public class AwsDatabaseController {
         return jdbcTemplate.queryForList(query);
     }
 
+//This queries returns customers that places order often
     @GetMapping("/frequent_buyers")
     public List<Map<String, Object>> getFrequentBuyers() {
         String query = """
