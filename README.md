@@ -107,7 +107,7 @@ http://[YOUR-EC2-IP]/index.html
 
 | Endpoint                        | Method | Description                          |
 |---------------------------------|--------|--------------------------------------|
-| `/api/top_customers`           | GET    | Returns top 10 customers by revenue  |
+| `/api/top_customers`           | GET    | Returns top customers by revenue  |
 | `/api/monthly_sales`           | GET    | Monthly sales figures for the year   |
 | `/api/avg_order_by_country`    | GET    | Average order value by country       |
 | `/api/products_never_ordered`  | GET    | Products never ordered               |
@@ -170,10 +170,10 @@ kill [PROCESS_ID]
 ```
 ### Resources
 ```bash
- [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
- [MySQL Documentation](https://dev.mysql.com/doc/)
- [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
+ https://docs.aws.amazon.com/rds/index.html
+ https://spring.io/projects/spring-boot
+ https://dev.mysql.com/doc/
+ https://docs.aws.amazon.com/ec2/index.html
 ```
 ps aux | grep <your-jar-file>
 kill <PROCESS_ID>
