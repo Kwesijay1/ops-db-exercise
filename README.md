@@ -69,11 +69,6 @@ sudo systemctl enable awsrds
 sudo systemctl start awsrds
 ```
 
-### 5. Verify Deployment
-```bash
-curl http://[YOUR-EC2-IP]:8080/api
-```
-
 ##  API Documentation
 
 ### Base URL
@@ -135,7 +130,7 @@ curl http://[YOUR-EC2-IP]:8080/api/frequent buyers
 mvn test
 ```
 
-## 📈 Monitoring & Maintenance
+##  Monitoring & Maintenance
 
 ### Viewing Logs
 ```bash
@@ -147,9 +142,16 @@ tail -f app.log
 # Find the process ID
 ps aux | grep < .jar file>
 
+
 # Kill the process
 kill [PROCESS_ID]
 
 ```
-
+### Resources
+```bash
+- [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
+- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+- [MySQL Documentation](https://dev.mysql.com/doc/)
+- [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
+```
 © 2025 Your Company - All Rights Reserved
