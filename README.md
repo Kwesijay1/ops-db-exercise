@@ -1,6 +1,6 @@
 # Spring Boot Inventory Database API
 
-## 📌 Project Overview
+##  Project Overview
 
 This Spring Boot RESTful API connects to a MySQL database hosted on **Amazon RDS** to provide business intelligence insights such as:
 
@@ -14,7 +14,7 @@ The application is deployed on an **AWS EC2** instance for reliable and scalable
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 | Component   | Technology                |
 |------------|---------------------------|
@@ -26,7 +26,7 @@ The application is deployed on an **AWS EC2** instance for reliable and scalable
 
 ---
 
-## 🔒 Security Implementation
+##  Security Implementation
 
 ### Database Credential Management
 
@@ -37,7 +37,7 @@ The application is deployed on an **AWS EC2** instance for reliable and scalable
 
 ---
 
-## ⚙️ Deployment Guide
+##  Deployment Guide
 
 ### 1. Build the Application
 
@@ -98,12 +98,6 @@ sudo systemctl start awsrds
 
 <<<<<<< HEAD
 ##  API Documentation
-=======
----
-
-## 📡 API Documentation
->>>>>>> 22e4fc4 (Updated)
-
 ### Base URL
 
 ```
@@ -122,7 +116,7 @@ http://[YOUR-EC2-IP]/index.html
 
 ---
 
-## 🗂 Project Structure
+##  Project Structure
 
 ```
 src/
@@ -142,7 +136,7 @@ src/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### API Testing (using curl)
 
@@ -160,16 +154,6 @@ curl http://[YOUR-EC2-IP]:8080/api/frequent_buyers
 mvn test
 ```
 
-<<<<<<< HEAD
-##  Monitoring & Maintenance
-=======
----
-
-## 🛠 Monitoring & Maintenance
-
-### View Logs
->>>>>>> 22e4fc4 (Updated)
-
 ```bash
 tail -f app.log
 ```
@@ -177,7 +161,6 @@ tail -f app.log
 ### Restart Service
 
 ```bash
-<<<<<<< HEAD
 # Find the process ID
 ps aux | grep < .jar file>
 
@@ -193,21 +176,7 @@ kill [PROCESS_ID]
  [MySQL Documentation](https://dev.mysql.com/doc/)
  [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
 ```
-=======
 ps aux | grep <your-jar-file>
 kill <PROCESS_ID>
 ```
-
----
-
-## 📚 Resources
-
-- [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [MySQL Documentation](https://dev.mysql.com/doc/)
-- [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
-
----
-
->>>>>>> 22e4fc4 (Updated)
 © 2025 Your Company - All Rights Reserved
