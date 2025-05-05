@@ -96,7 +96,6 @@ sudo systemctl enable awsrds
 sudo systemctl start awsrds
 ```
 
-<<<<<<< HEAD
 ##  API Documentation
 ### Base URL
 
