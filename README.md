@@ -149,9 +149,9 @@ kill [PROCESS_ID]
 ```
 ### Resources
 ```bash
-- [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [MySQL Documentation](https://dev.mysql.com/doc/)
-- [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
+ [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
+ [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+ [MySQL Documentation](https://dev.mysql.com/doc/)
+ [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
 ```
 © 2025 Your Company - All Rights Reserved
