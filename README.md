@@ -83,15 +83,15 @@ http://[YOUR-EC2-IP]:8080/api
 
 ### Available Endpoints
 
-| Endpoint | Method | Description | Sample Response |
-|----------|--------|-------------|-----------------|
-| `/top_customers` | GET | Returns top 10 customers by revenue | 
-| `/monthly_sales` | GET | Monthly sales figures for current year | 
-| `/avg_order_by_country` | GET | Average order value by country | 
-| `/products_never_ordered` | GET | Products never Ordered | 
-| `/frequent_buyers` | GET | Frequent buyers by country | 
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/top_customers` | GET | Returns top 10 customers by revenue 
+| `/monthly_sales` | GET | Monthly sales figures for current year
+| `/avg_order_by_country` | GET | Average order value by country
+| `/products_never_ordered` | GET | Products never Ordered
+| `/frequent_buyers` | GET | Frequent buyers by country
 
-## 📦 Project Structure
+##  Project Structure
 ```
 src/
 ├── main/
