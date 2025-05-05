@@ -1,9 +1,9 @@
-# Spring Boot Dashboard API
+# Spring Boot Inventory Database API
 
-## 📋 Project Overview
-This Spring Boot RESTful API connects to a MySQL database hosted on Amazon RDS to provide business intelligence insights including top customers, monthly sales analytics, and average order value by country. The application is deployed on an AWS EC2 instance for reliable cloud accessibility.
+##  Project Overview
+This Spring Boot RESTful API connects to a MySQL database hosted on Amazon RDS to provide business intelligence insights including top customers, monthly sales analytics, average order value by country, Products never Ordered, and frequent buyers. The application is deployed on an AWS EC2 instance for reliable cloud accessibility.
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -13,7 +13,7 @@ This Spring Boot RESTful API connects to a MySQL database hosted on Amazon RDS t
 | Build Tool | Maven 3.8+ |
 | Data Access | JDBC Template (for optimized SQL queries) |
 
-## 🔐 Security Implementation
+##  Security Implementation
 
 ### Database Credential Management
 - Credentials are securely stored using environment variables defined in `~/.bashrc`
@@ -21,7 +21,7 @@ This Spring Boot RESTful API connects to a MySQL database hosted on Amazon RDS t
 - Environment variables are loaded at runtime to ensure sensitive information is never committed to the codebase
 - Follows AWS security best practices for credential management
 
-## 🚀 Deployment Guide
+##  Deployment Guide
 
 ### 1. Build the Application
 ```bash
@@ -42,9 +42,31 @@ echo 'export DB_URL=jdbc:mysql://[your-rds-endpoint]:3306/[your_database]' >> ~/
 source ~/.bashrc
 ```
 
-### 4. Run the Application
+### 4. Run the Application in the Background
 ```bash
-nohup java -jar dashboard-api.jar > app.log 2>&1 &
+sudo nano /etc/systemd/system/awsrds.service
+
+
+[Unit]
+Description=AWS RDS Java App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu
+ExecStart=/usr/bin/java -jar /home/ubuntu/awsrds-0.0.1-SNAPSHOT.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable awsrds
+sudo systemctl start awsrds
 ```
 
 ### 5. Verify Deployment
@@ -52,7 +74,7 @@ nohup java -jar dashboard-api.jar > app.log 2>&1 &
 curl http://[YOUR-EC2-IP]:8080/api/health
 ```
 
-## 📡 API Documentation
+##  API Documentation
 
 ### Base URL
 ```
@@ -63,10 +85,11 @@ http://[YOUR-EC2-IP]:8080/api
 
 | Endpoint | Method | Description | Sample Response |
 |----------|--------|-------------|-----------------|
-| `/top_customers` | GET | Returns top 10 customers by revenue | JSON array of customer data |
-| `/monthly_sales` | GET | Monthly sales figures for current year | JSON with month/revenue pairs |
-| `/avg_order_by_country` | GET | Average order value by country | JSON with country/value pairs |
-| `/health` | GET | API health check | `{"status": "UP"}` |
+| `/top_customers` | GET | Returns top 10 customers by revenue | 
+| `/monthly_sales` | GET | Monthly sales figures for current year | 
+| `/avg_order_by_country` | GET | Average order value by country | 
+| `/products_never_ordered` | GET | Products never Ordered | 
+| `/frequent_buyers` | GET | Frequent buyers by country | 
 
 ## 📦 Project Structure
 ```
@@ -85,7 +108,7 @@ src/
 └── pom.xml                               # Maven dependencies
 ```
 
-## 🧪 Testing
+##  Testing
 
 ### API Testing
 Use Postman, curl, or any HTTP client:
@@ -99,6 +122,12 @@ curl http://[YOUR-EC2-IP]:8080/api/monthly_sales
 
 # Get average order by country
 curl http://[YOUR-EC2-IP]:8080/api/avg_order_by_country
+
+# Get products_never_ordered by country
+curl http://[YOUR-EC2-IP]:8080/api/products_never_ordered
+
+# Get frequent buyers by country
+curl http://[YOUR-EC2-IP]:8080/api/frequent buyers
 ```
 
 ### Running Unit Tests
@@ -116,22 +145,11 @@ tail -f app.log
 ### Restarting the Service
 ```bash
 # Find the process ID
-ps aux | grep dashboard-api.jar
+ps aux | grep <file .jar>
 
 # Kill the process
 kill [PROCESS_ID]
 
-# Restart the application
-nohup java -jar dashboard-api.jar > app.log 2>&1 &
 ```
-
-## 🔄 CI/CD Integration
-
-This project is designed to work with CI/CD pipelines:
-- Compatible with GitHub Actions, Jenkins, or AWS CodePipeline
-- Database migrations can be automated through schema updates
-- Supports blue/green deployment for zero-downtime updates
-
----
 
 © 2025 Your Company - All Rights Reserved
