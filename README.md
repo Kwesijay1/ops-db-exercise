@@ -78,7 +78,7 @@ curl http://[YOUR-EC2-IP]:8080/api
 
 ### Base URL
 ```
-http://[YOUR-EC2-IP]:8080/api
+http://[YOUR-EC2-IP]/index.html
 ```
 
 ### Available Endpoints
