@@ -27,11 +27,11 @@ This Spring Boot RESTful API connects to a MySQL database hosted on Amazon RDS t
 ```bash
 mvn clean package
 ```
-This generates the deployable artifact: `target/dashboard-api.jar`
+This generates the deployable artifact: `target/<.jar file>`
 
 ### 2. Transfer to EC2 Instance
 ```bash
-scp target/dashboard-api.jar ubuntu@[YOUR-EC2-IP]:/home/ubuntu/
+scp target/<.jar file> ubuntu@[YOUR-EC2-IP]:/home/ubuntu/
 ```
 
 ### 3. Configure Environment Variables
@@ -54,7 +54,7 @@ After=network.target
 [Service]
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/usr/bin/java -jar /home/ubuntu/awsrds-0.0.1-SNAPSHOT.jar
+ExecStart=/usr/bin/java -jar /home/ubuntu/<.jar file>
 SuccessExitStatus=143
 Restart=always
 RestartSec=5
@@ -71,7 +71,7 @@ sudo systemctl start awsrds
 
 ### 5. Verify Deployment
 ```bash
-curl http://[YOUR-EC2-IP]:8080/api/health
+curl http://[YOUR-EC2-IP]:8080/api
 ```
 
 ##  API Documentation
@@ -145,7 +145,7 @@ tail -f app.log
 ### Restarting the Service
 ```bash
 # Find the process ID
-ps aux | grep <file .jar>
+ps aux | grep < .jar file>
 
 # Kill the process
 kill [PROCESS_ID]
